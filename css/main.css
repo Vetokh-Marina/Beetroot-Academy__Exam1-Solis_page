@@ -251,31 +251,29 @@ body {
 }
 
 .header,
-.content {
+.section,
+.footer {
   padding: 0 calc(50vw - 585px);
 }
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1200px) {
   .header,
-  .content {
-    padding: 0 calc(50vw - 480px);
+  .section,
+  .footer {
+    padding: 0 calc(50vw - (585px - 12%));
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 992px) {
   .header,
-  .content {
-    padding: 0 calc(50vw - 360px);
+  .section,
+  .footer {
+    padding: 0 calc(50vw - (585px - 26.5%));
   }
 }
 @media screen and (max-width: 768px) {
   .header,
-  .content {
-    padding: 0 24px;
-  }
-}
-@media screen and (max-width: 576px) {
-  .header,
-  .content {
-    padding: 0 18px;
+  .section,
+  .footer {
+    padding: 0 15px;
   }
 }
 
@@ -294,6 +292,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: row;
   gap: 0;
 }
 
@@ -301,6 +300,7 @@ body {
   display: flex;
   justify-content: none;
   align-items: center;
+  flex-direction: row;
   gap: 30px;
   list-style: none;
 }
@@ -328,36 +328,65 @@ body {
   letter-spacing: 1.12px;
 }
 
+.section {
+  padding-bottom: 120px;
+}
+
 .first-screen {
   background: url(../assets/img/first-screen-bg.png);
   background-size: 100%;
-  height: 100vh;
+  height: 140vh;
   padding-top: 260px;
   background-repeat: no-repeat;
 }
 
 .content__title {
   font-family: "Playfair Display";
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   max-width: 523px;
-  font-size: 44px;
+  font-size: 40px;
   font-weight: 400;
-  line-height: 1.18;
+  line-height: 48px;
 }
 .content__title-green {
   color: #85BBB1;
   font-style: italic;
 }
+.content__title_big {
+  margin-bottom: 20px;
+  font-size: 44px;
+  line-height: 52px;
+}
 .content__text {
   font-weight: 300;
   line-height: 26px;
   opacity: 0.8;
-  max-width: 439px;
+}
+.content__text_mod {
   margin-bottom: 50px;
+  max-width: 439px;
 }
 
 .btn {
   border: transparent;
+  color: #F1897B;
+  position: relative;
+}
+.btn-mod {
+  padding: 33px 96px 37px 89px;
+  border: 1px solid #E4E4E4;
+  background-color: transparent;
+  max-width: 302px;
+}
+.btn-mod::after {
+  content: "";
+  position: absolute;
+  top: 44px;
+  left: 86px;
+  width: 44%;
+  height: 13px;
+  opacity: 0.3;
+  background: #F1897B;
 }
 .btn__text {
   font-size: 20px;
@@ -365,10 +394,6 @@ body {
   line-height: 20px;
   letter-spacing: 1.6px;
   text-transform: uppercase;
-}
-.btn-red {
-  color: #F1897B;
-  position: relative;
 }
 .btn-red::after {
   content: "";
@@ -392,4 +417,188 @@ body {
 }
 .btn:hover {
   color: #E54F3A;
+}
+
+.info {
+  display: flex;
+  justify-content: none;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  margin-top: -300px;
+}
+.info__item {
+  display: flex;
+  justify-content: none;
+  align-items: none;
+  flex-direction: row;
+  gap: 0;
+  opacity: 0.8;
+  background-color: #FFF;
+  padding: 45px 0;
+  max-width: 770px;
+  max-height: 580px;
+  margin-left: -185px;
+}
+.info__list {
+  list-style: none;
+  min-width: 370px;
+}
+.info__descr {
+  min-width: 400px;
+}
+
+.list {
+  text-align: center;
+  font-family: "Playfair Display";
+}
+.list__item:not(:last-child) {
+  margin-bottom: 80px;
+}
+.list__title {
+  font-size: 68px;
+  line-height: 72px;
+  margin-bottom: 12px;
+}
+.list__decor {
+  font-size: 40px;
+  line-height: 50px;
+  color: #E4E4E4;
+  margin-right: 10px;
+}
+.list__text {
+  font-weight: 300;
+  line-height: 26px;
+}
+
+.benefits {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 60px;
+  -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+          column-gap: 30px;
+  padding-top: 30px;
+  align-content: center;
+}
+.benefits__content {
+  padding: 20px 30px;
+  position: relative;
+}
+.benefits__content::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #e4e4e4;
+  top: -30px;
+  left: 0;
+}
+
+.quote {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: none;
+  flex-direction: column;
+  gap: 40px;
+  padding: 100px 0 100px 160px;
+  background: url(../assets/img/quote-background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+.quote__text {
+  font-size: 32px;
+  line-height: 46px;
+  letter-spacing: 1.28px;
+  max-width: 710px;
+}
+.quote__text-sub {
+  font-size: 20px;
+  font-family: "Playfair Display";
+  font-style: italic;
+  line-height: 20px;
+  letter-spacing: 1.6px;
+}
+.quote__text::before {
+  content: url(../assets/img/quote-icon.svg);
+  position: absolute;
+  top: 70px;
+  left: 100px;
+}
+
+.video {
+  display: flex;
+  justify-content: center;
+  align-items: none;
+  flex-direction: column;
+  gap: 50px;
+}
+.video__content {
+  border-radius: 32px;
+  border: 1px solid #E4E4E4;
+}
+
+.promisses {
+  display: flex;
+  justify-content: center;
+  align-items: none;
+  flex-direction: none;
+  gap: 0;
+}
+.promisses__box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 100px;
+  -webkit-column-gap: 70px;
+     -moz-column-gap: 70px;
+          column-gap: 70px;
+  align-content: center;
+  opacity: 0.8;
+  background-color: #FFF;
+  padding: 75px 0 75px 70px;
+}
+
+.reviews__cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.card {
+  color: #FFF;
+}
+.card__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: none;
+  flex-direction: column;
+  gap: 0;
+  max-width: 370px;
+  height: 340px;
+  padding: 30px 40px;
+}
+.card__item:nth-child(1) {
+  background: url("../assets/img/reviews_image1.png") center center/cover no-repeat;
+}
+.card__item:nth-child(2) {
+  background: url("../assets/img/reviews_image2.png") center center/cover no-repeat;
+}
+.card__item:nth-child(3) {
+  background: url("../assets/img/reviews_image3.png") center center/cover no-repeat;
+}
+.card__text {
+  font-size: 16px;
+  line-height: 26px;
+  opacity: 0.8;
+}
+.card__sub {
+  font-size: 20px;
+  font-family: "Playfair Display";
+  font-style: italic;
+  line-height: 20px;
+  letter-spacing: 1.6px;
 }

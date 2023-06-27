@@ -19,31 +19,22 @@ body {
 }
 
 .header,
-.content {
+.section,
+.footer {
    padding: 0 calc(50vw - $half_width_content);
 
-   @media screen and (max-width:1400px) {
-      padding: 0 calc(50vw - 480px);
+   @media screen and (max-width: 1200px) {
+      padding: 0 calc(50vw - calc($half_width_content - 12%));
    }
 
-   @media screen and (max-width:1024px) {
-      padding: 0 calc(50vw - 360px);
+   @media screen and (max-width: 992px) {
+      padding: 0 calc(50vw - calc($half_width_content - 26.5%));
    }
 
-   @media screen and (max-width:768px) {
-      padding: 0 24px;
-   }
-
-   @media screen and (max-width:576px) {
-      padding: 0 18px;
+   @media screen and (max-width: 768px) {
+      padding: 0 15px;
    }
 }
-
-// .container {
-//    max-width: $width_content;
-//    margin: 0 auto;
-//    padding: 0 15px;
-// }
 
 .header {
    position: absolute;
@@ -56,11 +47,11 @@ body {
 }
 
 .flex {
-   @include flex(space-between, center, 0);
+   @include flex(space-between, center, row, 0);
 }
 
 .menu {
-   @include flex(none, center, 30px);
+   @include flex(none, center, row, 30px);
    list-style: none;
 
    &__item {
@@ -91,10 +82,14 @@ body {
 
 }
 
+.section {
+   padding-bottom: 120px;
+}
+
 .first-screen {
    background: url(../assets/img/first-screen-bg.png);
    background-size: 100%;
-   height: 100vh;
+   height: 140vh;
    padding-top: 260px;
    background-repeat: no-repeat;
 }
@@ -102,15 +97,21 @@ body {
 .content {
    &__title {
       font-family: "Playfair Display";
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       max-width: 523px;
-      font-size: 44px;
+      font-size: 40px;
       font-weight: 400;
-      line-height: 1.18;
+      line-height: 48px;
 
       &-green {
          color: $color_green;
          font-style: italic;
+      }
+
+      &_big {
+         margin-bottom: 20px;
+         font-size: 44px;
+         line-height: 52px;
       }
    }
 
@@ -118,13 +119,37 @@ body {
       font-weight: 300;
       line-height: 26px;
       opacity: 0.8;
-      max-width: 439px;
-      margin-bottom: 50px;
+
+
+      &_mod {
+         margin-bottom: 50px;
+         max-width: 439px;
+      }
    }
 }
 
 .btn {
    border: transparent;
+   color: $color_coral;
+   position: relative;
+
+   &-mod {
+      padding: 33px 96px 37px 89px;
+      border: 1px solid $primary-grey;
+      background-color: transparent;
+      max-width: 302px;
+
+      &::after {
+         content: '';
+         position: absolute;
+         top: 44px;
+         left: 86px;
+         width: 44%;
+         height: 13px;
+         opacity: 0.3;
+         background: $color_coral;
+      }
+   }
 
    &__text {
       font-size: 20px;
@@ -136,8 +161,6 @@ body {
    }
 
    &-red {
-      color: $color_coral;
-      position: relative;
 
       &::after {
          content: '';
@@ -165,5 +188,193 @@ body {
 
    &:hover {
       color: $color_dark-red;
+   }
+}
+
+.info {
+   @include flex(none, center, row, 0);
+   margin-top: -300px;
+
+   &__item {
+      @include flex(none, none, row, 0);
+      opacity: 0.8;
+      background-color: #FFF;
+      padding: 45px 0;
+      max-width: 770px;
+      max-height: 580px;
+      margin-left: -185px;
+   }
+
+   &__list {
+      list-style: none;
+      min-width: 370px;
+   }
+
+   &__descr {
+      min-width: 400px;
+   }
+}
+
+.list {
+   text-align: center;
+   font-family: "Playfair Display";
+
+   &__item:not(:last-child) {
+      margin-bottom: 80px;
+   }
+
+   // &__item::after {
+   //    content: "";
+   //    position: absolute;
+   //    width: 100px;
+   //    height: 2px;
+   //    background: #85bbb1;
+   //    left: 50%;
+   //    transform: translateX(-50%);
+   //    top: 40px;
+   // }
+
+   &__title {
+
+      font-size: 68px;
+
+      line-height: 72px;
+      margin-bottom: 12px;
+   }
+
+   &__decor {
+      font-size: 40px;
+      line-height: 50px;
+      color: #E4E4E4;
+      margin-right: 10px;
+   }
+
+   &__text {
+      font-weight: 300;
+      line-height: 26px;
+   }
+}
+
+.benefits {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   row-gap: 60px;
+   column-gap: 30px;
+   padding-top: 30px;
+   align-content: center;
+
+   &__content {
+      padding: 20px 30px;
+      position: relative;
+
+      &::before {
+         content: "";
+         position: absolute;
+         width: 100%;
+         height: 1px;
+         background: #e4e4e4;
+         top: -30px;
+         left: 0;
+
+      }
+   }
+}
+
+.quote {
+   position: relative;
+   @include flex (center, none, column, 40px);
+   padding: 100px 0 100px 160px;
+   background: url(../assets/img/quote-background.png);
+   background-size: cover;
+   background-repeat: no-repeat;
+   color: $primary-white;
+
+   &__text {
+      font-size: 32px;
+      line-height: 46px;
+      letter-spacing: 1.28px;
+      max-width: 710px;
+
+      &-sub {
+         font-size: 20px;
+         font-family: "Playfair Display";
+         font-style: italic;
+         line-height: 20px;
+         letter-spacing: 1.6px;
+      }
+
+      &::before {
+         content: url(../assets/img/quote-icon.svg);
+         position: absolute;
+         top: 70px;
+         left: 100px;
+      }
+   }
+}
+
+.video {
+   @include flex (center, none, column, 50px);
+
+   &__content {
+      border-radius: 32px;
+      border: 1px solid $primary-grey;
+   }
+}
+
+.promisses {
+   @include flex (center, none, none, 0);
+
+   &__box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 100px;
+      column-gap: 70px;
+      align-content: center;
+      opacity: 0.8;
+      background-color: #FFF;
+      padding: 75px 0 75px 70px;
+   }
+}
+
+.reviews {
+   &__cards {
+      @include flex (center, center, row, 30px);
+   }
+}
+
+.card {
+   color: #FFF;
+
+   &__item {
+      @include flex (space-between, none, column, 0);
+      max-width: 370px;
+      height: 340px;
+      padding: 30px 40px;
+
+      &:nth-child(1) {
+         background: url("../assets/img/reviews_image1.png") center center/cover no-repeat;
+      }
+
+      &:nth-child(2) {
+         background: url("../assets/img/reviews_image2.png") center center/cover no-repeat;
+      }
+
+      &:nth-child(3) {
+         background: url("../assets/img/reviews_image3.png") center center/cover no-repeat;
+      }
+   }
+
+   &__text {
+      font-size: 16px;
+      line-height: 26px;
+      opacity: 0.8;
+   }
+
+   &__sub {
+      font-size: 20px;
+      font-family: "Playfair Display";
+      font-style: italic;
+      line-height: 20px;
+      letter-spacing: 1.6px;
    }
 }
