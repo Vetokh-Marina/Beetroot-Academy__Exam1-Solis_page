@@ -19,6 +19,8 @@
          <div class="logo">
             <img src="./assets/img/logo.png" alt="logo company" class="logo__img">
          </div>
+         <input type="checkbox" class="nav__burger" id="burger">
+         <label for="burger" class="burger-img"></label>
          <ul class="menu">
             <li class="menu__item"><a href="#" class="menu__link">Home</a></li>
             <li class="menu__item"><a href="#" class="menu__link">About</a></li>
@@ -52,11 +54,13 @@
                <li class="list__item">
                   <h2 class="list__title"><span class="list__decor">$</span>1 tril </h2>
                   <p class="list__text">Market cap potential</p>
+                  <span class="list__line"></span>
                </li>
                <li class="list__item">
                   <h2 class="list__title"><span class="list__decor">$</span>3.65 mil</h2>
 
                   <p class="list__text">Deposited to platform</p>
+                  <span class="list__line"></span>
                </li>
                <li class="list__item">
                   <h2 class="list__title">12</h2>
@@ -65,16 +69,20 @@
             </ul>
             <div class="info__descr content">
                <p class="content__text">Solis group is a new venture created with investments from and collaboration
-                  with
-                  XBTO International, XBTO Ventures and Phil Potter, formerly of bitfinex. Stablehouse is intended to
+                  with XBTO International, XBTO Ventures and Phil Potter, formerly of bitfinex. Stablehouse is intended
+                  to
                   launch a first-of-its-kind clearing house for stablecoins that seeks to promote the next phase of the
-                  market’s development.</p>
+                  market’s development.
+               </p>
                <p class="content__text">The API-enabled, centralized platform addresses the key issues of inconsistent
                   liquidity, stability and accessibility which are currently preventing the stablecoin market from
-                  reaching critical mass.</p>
-               <button class="btn btn-red">
-                  <span class="btn__text">Contact sales</span>
-               </button>
+                  reaching critical mass.
+               </p>
+               <div class="button ">
+                  <button class="btn btn-red">
+                     <span class="btn__text">Contact sales</span>
+                  </button>
+               </div>
             </div>
          </div>
       </section>
@@ -113,10 +121,19 @@
       </section>
       <section class="section video">
          <div class="video__content">
-            <iframe class="video__item" width="870" height="539" src="https://www.youtube.com/embed/vnbN9V_2Guk"
-               title="YouTube video" frameborder="0"
-               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-               allowfullscreen></iframe>
+            <div class="media">
+               <input type="checkbox" class="media__input" id="name" />
+               <label for="name" class="media__label">
+                  <img src="./assets/img/icon-play.png" alt="icon-play " class="media__img">
+               </label>
+               <iframe class="media__item" width="870" height="539" src="https://www.youtube.com/embed/vnbN9V_2Guk"
+                  title="YouTube video" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+               <div class="media__overlay">
+                  <img src="./assets/img/overlay-video.png" alt="overlays" />
+               </div>
+            </div>
          </div>
          <div class="video__descr content">
             <h2 class="content__title">A<span class="content__title-green"> powerful API</span> , easy to use user
