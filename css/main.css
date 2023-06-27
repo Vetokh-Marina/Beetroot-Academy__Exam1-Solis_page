@@ -496,6 +496,17 @@ body {
   font-weight: 300;
   line-height: 26px;
 }
+.list__text:after {
+  content: "";
+  position: absolute;
+  width: 27%;
+  height: 2px;
+  background: #85bbb1;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  top: calc(100% + 45px);
+}
 
 .benefits {
   display: grid;
@@ -569,7 +580,7 @@ body {
 .promisses {
   display: flex;
   justify-content: center;
-  align-items: none;
+  align-items: center;
   flex-direction: none;
   gap: 0;
 }
@@ -584,6 +595,28 @@ body {
   opacity: 0.8;
   background-color: #FFF;
   padding: 75px 0 75px 70px;
+}
+
+.box {
+  max-width: 770px;
+  max-height: 450px;
+  margin-left: -399px;
+}
+.box__item {
+  display: flex;
+  justify-content: center;
+  align-items: none;
+  flex-direction: column;
+  gap: 15px;
+}
+.box__title {
+  font-size: 24px;
+  font-family: "Playfair Display";
+  line-height: 48px;
+}
+.box__text {
+  font-weight: 300;
+  line-height: 26px;
 }
 
 .reviews__cards {

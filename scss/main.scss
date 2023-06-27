@@ -275,6 +275,18 @@ body {
    &__text {
       font-weight: 300;
       line-height: 26px;
+
+      &:after {
+         content: "";
+         position: absolute;
+         width: 27%;
+         height: 2px;
+         background: #85bbb1;
+         left: 50%;
+         -webkit-transform: translateX(-50%);
+         transform: translateX(-50%);
+         top: calc(100% + 45px);
+      }
    }
 }
 
@@ -345,7 +357,7 @@ body {
 }
 
 .promisses {
-   @include flex (center, none, none, 0);
+   @include flex (center, center, none, 0);
 
    &__box {
       display: grid;
@@ -356,6 +368,27 @@ body {
       opacity: 0.8;
       background-color: #FFF;
       padding: 75px 0 75px 70px;
+   }
+}
+
+.box {
+   max-width: 770px;
+   max-height: 450px;
+   margin-left: -399px;
+
+   &__item {
+      @include flex (center, none, column, 15px);
+   }
+
+   &__title {
+      font-size: 24px;
+      font-family: "Playfair Display";
+      line-height: 48px;
+   }
+
+   &__text {
+      font-weight: 300;
+      line-height: 26px;
    }
 }
 
