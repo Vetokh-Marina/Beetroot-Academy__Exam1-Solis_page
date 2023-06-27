@@ -491,6 +491,17 @@ body {
   line-height: 26px;
   opacity: 0.8;
 }
+@media screen and (max-width: 768px) {
+  .content__text {
+    max-width: 80%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .content__text {
+    max-width: 52%;
+    line-height: 18px;
+  }
+}
 .content__text_mod {
   margin-bottom: 50px;
   max-width: 439px;
@@ -534,6 +545,12 @@ body {
   border: 1px solid #E4E4E4;
   max-width: 302px;
 }
+@media screen and (max-width: 768px) {
+  .btn-mod {
+    padding: 25px 27px 25px 22px;
+    max-width: 230px;
+  }
+}
 .btn-mod::after {
   content: "";
   position: absolute;
@@ -543,6 +560,18 @@ body {
   height: 13px;
   opacity: 0.3;
   background: #F1897B;
+}
+@media screen and (max-width: 768px) {
+  .btn-mod::after {
+    content: "";
+    position: absolute;
+    top: 58px;
+    left: 70px;
+    width: 49%;
+    height: 7px;
+    opacity: 0.3;
+    background: #F1897B;
+  }
 }
 .btn__text {
   font-size: 20px;
@@ -596,14 +625,32 @@ body {
   max-height: 580px;
   margin-left: -185px;
 }
+@media screen and (max-width: 1200px) {
+  .info__item {
+    margin-left: -376px;
+    max-width: 585px;
+  }
+}
 @media screen and (max-width: 768px) {
   .info__item {
     margin-left: -550px;
+    max-width: 565px;
   }
 }
 .info__list {
   list-style: none;
   min-width: 370px;
+}
+@media screen and (max-width: 768px) {
+  .info__list {
+    min-width: 270px;
+  }
+}
+@media screen and (max-width: 670px) {
+  .info__list {
+    min-width: 200px;
+    margin-right: 15px;
+  }
 }
 .info__descr {
   min-width: 400px;
@@ -625,6 +672,16 @@ body {
   font-size: 68px;
   line-height: 72px;
   margin-bottom: 12px;
+}
+@media screen and (max-width: 768px) {
+  .list__title {
+    font-size: 45px;
+  }
+}
+@media screen and (max-width: 670px) {
+  .list__title {
+    font-size: 35px;
+  }
 }
 .list__decor {
   font-size: 40px;
@@ -831,11 +888,32 @@ body {
   background-color: #FFF;
   padding: 75px 0 75px 70px;
 }
+@media screen and (max-width: 1200px) {
+  .promisses__box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 70px;
+    -webkit-column-gap: 70px;
+    -moz-column-gap: 70px;
+    column-gap: 40px;
+    align-content: center;
+    opacity: 0.8;
+    background-color: #FFF;
+    padding: 49px 0 56px 33px;
+  }
+}
 
 .box {
   max-width: 770px;
   max-height: 450px;
   margin-left: -399px;
+}
+@media screen and (max-width: 1200px) {
+  .box {
+    max-width: 665px;
+    max-height: 421px;
+    margin-left: -630px;
+  }
 }
 .box__item {
   display: flex;
